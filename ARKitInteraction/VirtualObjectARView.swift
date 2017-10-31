@@ -199,10 +199,10 @@ class VirtualObjectARView: ARSCNView {
                                         featureDistanceToHitResult: featureDistanceFromResult)
         }
 
-        // Sort the results by feature distance to the ray.
+        // Sort the results by feature distance to the ray origin.
         let sortedResults = results.sorted { $0.distanceToRayOrigin < $1.distanceToRayOrigin }
 
-        let remainingResults = sortedResults.dropFirst(maxResults)
+		let remainingResults = maxResults > 0 ? Array(sortedResults.prefix(maxResults)) : sortedResults
 
         return Array(remainingResults)
     }
