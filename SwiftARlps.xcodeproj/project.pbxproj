@@ -37,7 +37,7 @@
 		147D76491EFC36070000FEBF /* ViewController+ObjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ObjectSelection.swift"; sourceTree = "<group>"; };
 		1488323E1EFC378A0043E0AB /* ViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
 		148832401EFC3B250043E0AB /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
-		3929C4881E89EC2C00E00B60 /* ARKitInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3929C4881E89EC2C00E00B60 /* SwiftARlps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftARlps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3929C48D1E89EC2C00E00B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3929C4901E89EC2C00E00B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		C812D8671F47628300344E73 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
 		C8C12A701F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		C8C2AC511F3A545C00E86BA3 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
-		E5D46016DF144A3D9292F48C /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
 		C8D719FF1F3B7D3D0086AD64 /* ModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
+		E5D46016DF144A3D9292F48C /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		EDEAD543F9C5D3E64B9CC319 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				11063F3B1EBE651B0033EE6D /* README.md */,
-				3929C48A1E89EC2C00E00B60 /* ARKitInteraction */,
+				3929C48A1E89EC2C00E00B60 /* SwiftARlps */,
 				3929C4891E89EC2C00E00B60 /* Products */,
 				709A21C4DC1039A54BBAAD49 /* Configuration */,
 				7F05FCEC064DFEF9F00989C9 /* LICENSE */,
@@ -124,12 +124,12 @@
 		3929C4891E89EC2C00E00B60 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3929C4881E89EC2C00E00B60 /* ARKitInteraction.app */,
+				3929C4881E89EC2C00E00B60 /* SwiftARlps.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3929C48A1E89EC2C00E00B60 /* ARKitInteraction */ = {
+		3929C48A1E89EC2C00E00B60 /* SwiftARlps */ = {
 			isa = PBXGroup;
 			children = (
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
@@ -146,7 +146,7 @@
 				1488324A1EFC3E9C0043E0AB /* Utilities */,
 				1488324C1EFC3ED00043E0AB /* Resources */,
 			);
-			path = ARKitInteraction;
+			path = SwiftARlps;
 			sourceTree = "<group>";
 		};
 		709A21C4DC1039A54BBAAD49 /* Configuration */ = {
@@ -162,7 +162,6 @@
 			children = (
 				E5D46016DF144A3D9292F48C /* LICENSE.txt */,
 			);
-			name = LICENSE;
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
@@ -181,9 +180,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3929C4871E89EC2C00E00B60 /* ARKitInteraction */ = {
+		3929C4871E89EC2C00E00B60 /* SwiftARlps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3929C49A1E89EC2C00E00B60 /* Build configuration list for PBXNativeTarget "ARKitInteraction" */;
+			buildConfigurationList = 3929C49A1E89EC2C00E00B60 /* Build configuration list for PBXNativeTarget "SwiftARlps" */;
 			buildPhases = (
 				3929C4841E89EC2C00E00B60 /* Sources */,
 				3929C4851E89EC2C00E00B60 /* Frameworks */,
@@ -193,9 +192,9 @@
 			);
 			dependencies = (
 			);
-			name = ARKitInteraction;
+			name = SwiftARlps;
 			productName = ARKitInteraction;
-			productReference = 3929C4881E89EC2C00E00B60 /* ARKitInteraction.app */;
+			productReference = 3929C4881E89EC2C00E00B60 /* SwiftARlps.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3929C4831E89EC2C00E00B60 /* Build configuration list for PBXProject "ARKitInteraction" */;
+			buildConfigurationList = 3929C4831E89EC2C00E00B60 /* Build configuration list for PBXProject "SwiftARlps" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -228,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3929C4871E89EC2C00E00B60 /* ARKitInteraction */,
+				3929C4871E89EC2C00E00B60 /* SwiftARlps */,
 			);
 		};
 /* End PBXProject section */
@@ -408,7 +407,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitInteraction/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.arkit-sample-app${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.theswiftalps.SwiftARlps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -427,7 +426,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitInteraction/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.arkit-sample-app${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.theswiftalps.SwiftARlps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -438,7 +437,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3929C4831E89EC2C00E00B60 /* Build configuration list for PBXProject "ARKitInteraction" */ = {
+		3929C4831E89EC2C00E00B60 /* Build configuration list for PBXProject "SwiftARlps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3929C4981E89EC2C00E00B60 /* Debug */,
@@ -447,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3929C49A1E89EC2C00E00B60 /* Build configuration list for PBXNativeTarget "ARKitInteraction" */ = {
+		3929C49A1E89EC2C00E00B60 /* Build configuration list for PBXNativeTarget "SwiftARlps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3929C49B1E89EC2C00E00B60 /* Debug */,
