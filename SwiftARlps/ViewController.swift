@@ -62,6 +62,7 @@ class ViewController: UIViewController {
         
         sceneView.delegate = self
         sceneView.session.delegate = self
+        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
 
         // Set up scene content.
         setupCamera()
