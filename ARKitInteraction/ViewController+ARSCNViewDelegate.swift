@@ -32,12 +32,12 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
         DispatchQueue.main.async {
             self.statusViewController.cancelScheduledMessage(for: .planeEstimation)
             self.statusViewController.showMessage("SURFACE DETECTED")
-            if self.virtualObjectLoader.loadedObjects.isEmpty {
                 self.statusViewController.scheduleMessage("TAP + TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .contentPlacement)
+            if self.virtualObjectList.objects.isEmpty {
             }
         }
         updateQueue.async {
-            for object in self.virtualObjectLoader.loadedObjects {
+            for object in self.virtualObjectList.objects {
                 object.adjustOntoPlaneAnchor(planeAnchor, using: node)
             }
         }
@@ -46,7 +46,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         updateQueue.async {
-            for object in self.virtualObjectLoader.loadedObjects {
+            for object in self.virtualObjectList.objects {
                 object.adjustOntoPlaneAnchor(planeAnchor, using: node)
             }
         }

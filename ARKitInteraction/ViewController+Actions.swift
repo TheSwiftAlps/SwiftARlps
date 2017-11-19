@@ -19,7 +19,7 @@ extension ViewController: UIGestureRecognizerDelegate {
     /// Displays the `ModelObjectSelectionViewController` from the `addObjectButton` or in response to a tap gesture in the `sceneView`.
     @IBAction func showModelObjectSelectionViewController() {
         // Ensure adding objects is an available action and we are not loading another object (to avoid concurrent modifications of the scene).
-        guard !addObjectButton.isHidden && !virtualObjectLoader.isLoading else { return }
+        guard !addObjectButton.isHidden && !virtualObjectList.isLoading else { return }
         
         statusViewController.cancelScheduledMessage(for: .contentPlacement)
         performSegue(withIdentifier: SegueIdentifier.showObjects.rawValue, sender: addObjectButton)
@@ -27,7 +27,7 @@ extension ViewController: UIGestureRecognizerDelegate {
     
     /// Determines if the tap gesture for presenting the `ModelObjectSelectionViewController` should be used.
     func gestureRecognizerShouldBegin(_: UIGestureRecognizer) -> Bool {
-        return virtualObjectLoader.loadedObjects.isEmpty
+        return virtualObjectList.objects.isEmpty
     }
     
     func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
@@ -36,14 +36,14 @@ extension ViewController: UIGestureRecognizerDelegate {
     
     /// - Tag: restartExperience
     func restartExperience() {
-        guard isRestartAvailable, !virtualObjectLoader.isLoading else { return }
+        guard isRestartAvailable, !virtualObjectList.isLoading else { return }
         isRestartAvailable = false
 
         statusViewController.cancelAllScheduledMessages()
 
-        virtualObjectLoader.removeAllVirtualObjects()
         addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
         addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
+        virtualObjectList.removeAllObjects()
 
         resetTracking()
 
@@ -79,7 +79,7 @@ extension ViewController: UIPopoverPresentationControllerDelegate {
         objectsViewController.delegate = self
         
         // Set all rows of currently placed objects to selected.
-        for object in virtualObjectLoader.loadedObjects {
+        for object in virtualObjectList.loadedModels {
             guard let index = ModelObject.availableObjects.index(of: object) else { continue }
             objectsViewController.selectedModelObjectRows.insert(index)
         }

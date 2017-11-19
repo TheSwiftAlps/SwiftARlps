@@ -34,10 +34,9 @@ class ViewController: UIViewController {
     
     /// A type which manages gesture manipulation of virtual content in the scene.
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView)
-    
-    /// Coordinates the loading and unloading of reference nodes for virtual objects.
-    let virtualObjectLoader = VirtualObjectLoader()
-    
+
+    let virtualObjectList = VirtualObjectList()
+
     /// Marks if the AR experience is available for restart.
     var isRestartAvailable = true
     
@@ -135,7 +134,7 @@ class ViewController: UIViewController {
     // MARK: - Focus Square
 
 	func updateFocusSquare() {
-        let isObjectVisible = virtualObjectLoader.loadedObjects.contains { object in
+        let isObjectVisible = virtualObjectList.objects.contains { object in
             return sceneView.isNode(object, insideFrustumOf: sceneView.pointOfView!)
         }
         

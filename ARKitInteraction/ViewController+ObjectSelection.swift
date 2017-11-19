@@ -34,7 +34,7 @@ extension ViewController: ModelObjectSelectionViewControllerDelegate {
     // MARK: - ModelObjectSelectionViewControllerDelegate
     
     func modelObjectSelectionViewController(_: ModelObjectSelectionViewController, didSelectObject object: ModelObject) {
-        virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
+        virtualObjectList.add(model: object, addedHandler: { [unowned self] loadedObject in
             DispatchQueue.main.async {
                 self.hideObjectLoadingUI()
                 self.placeVirtualObject(loadedObject)
@@ -45,10 +45,7 @@ extension ViewController: ModelObjectSelectionViewControllerDelegate {
     }
     
     func modelObjectSelectionViewController(_: ModelObjectSelectionViewController, didDeselectObject object: ModelObject) {
-        guard let objectIndex = virtualObjectLoader.loadedObjects.index(of: object) else {
-            fatalError("Programmer error: Failed to lookup virtual object in scene.")
-        }
-        virtualObjectLoader.removeVirtualObject(at: objectIndex)
+        virtualObjectList.remove(object: object)
     }
 
     // MARK: Object Loading UI
