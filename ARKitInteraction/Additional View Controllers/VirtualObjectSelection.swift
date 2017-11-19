@@ -23,24 +23,24 @@ class ObjectCell: UITableViewCell {
     }
 }
 
-// MARK: - VirtualObjectSelectionViewControllerDelegate
+// MARK: - ModelObjectSelectionViewControllerDelegate
 
 /// A protocol for reporting which objects have been selected.
-protocol VirtualObjectSelectionViewControllerDelegate: class {
-    func virtualObjectSelectionViewController(_ selectionViewController: VirtualObjectSelectionViewController, didSelectObject: VirtualObject)
-    func virtualObjectSelectionViewController(_ selectionViewController: VirtualObjectSelectionViewController, didDeselectObject: VirtualObject)
+protocol ModelObjectSelectionViewControllerDelegate: class {
+    func modelObjectSelectionViewController(_ selectionViewController: ModelObjectSelectionViewController, didSelectObject: ModelObject)
+    func modelObjectSelectionViewController(_ selectionViewController: ModelObjectSelectionViewController, didDeselectObject: ModelObject)
 }
 
-/// A custom table view controller to allow users to select `VirtualObject`s for placement in the scene.
-class VirtualObjectSelectionViewController: UITableViewController {
+/// A custom table view controller to allow users to select `ModelObject`s for placement in the scene.
+class ModelObjectSelectionViewController: UITableViewController {
     
-    /// The collection of `VirtualObject`s to select from.
-    var virtualObjects = [VirtualObject]()
+    /// The collection of `ModelObject`s to select from.
+    var modelObjects = [ModelObject]()
     
-    /// The rows of the currently selected `VirtualObject`s.
-    var selectedVirtualObjectRows = IndexSet()
+    /// The rows of the currently selected `ModelObject`s.
+    var selectedModelObjectRows = IndexSet()
     
-    weak var delegate: VirtualObjectSelectionViewControllerDelegate?
+    weak var delegate: ModelObjectSelectionViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,13 +55,13 @@ class VirtualObjectSelectionViewController: UITableViewController {
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let object = virtualObjects[indexPath.row]
+        let object = modelObjects[indexPath.row]
         
         // Check if the current row is already selected, then deselect it.
-        if selectedVirtualObjectRows.contains(indexPath.row) {
-            delegate?.virtualObjectSelectionViewController(self, didDeselectObject: object)
+        if selectedModelObjectRows.contains(indexPath.row) {
+            delegate?.modelObjectSelectionViewController(self, didDeselectObject: object)
         } else {
-            delegate?.virtualObjectSelectionViewController(self, didSelectObject: object)
+            delegate?.modelObjectSelectionViewController(self, didSelectObject: object)
         }
 
         dismiss(animated: true, completion: nil)
@@ -70,7 +70,7 @@ class VirtualObjectSelectionViewController: UITableViewController {
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return virtualObjects.count
+        return modelObjects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,9 +78,9 @@ class VirtualObjectSelectionViewController: UITableViewController {
             fatalError("Expected `\(ObjectCell.self)` type for reuseIdentifier \(ObjectCell.reuseIdentifier). Check the configuration in Main.storyboard.")
         }
         
-        cell.modelName = virtualObjects[indexPath.row].modelName
+        cell.modelName = modelObjects[indexPath.row].modelName
 
-        if selectedVirtualObjectRows.contains(indexPath.row) {
+        if selectedModelObjectRows.contains(indexPath.row) {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none

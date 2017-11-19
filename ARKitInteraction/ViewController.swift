@@ -82,7 +82,7 @@ class ViewController: UIViewController {
             self.restartExperience()
         }
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showVirtualObjectSelectionViewController))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showModelObjectSelectionViewController))
         // Set the delegate to ensure this gesture is only used when there are no virtual objects in the scene.
         tapGesture.delegate = self
         sceneView.addGestureRecognizer(tapGesture)

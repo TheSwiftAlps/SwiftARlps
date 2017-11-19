@@ -16,8 +16,8 @@ extension ViewController: UIGestureRecognizerDelegate {
     
     // MARK: - Interface Actions
     
-    /// Displays the `VirtualObjectSelectionViewController` from the `addObjectButton` or in response to a tap gesture in the `sceneView`.
-    @IBAction func showVirtualObjectSelectionViewController() {
+    /// Displays the `ModelObjectSelectionViewController` from the `addObjectButton` or in response to a tap gesture in the `sceneView`.
+    @IBAction func showModelObjectSelectionViewController() {
         // Ensure adding objects is an available action and we are not loading another object (to avoid concurrent modifications of the scene).
         guard !addObjectButton.isHidden && !virtualObjectLoader.isLoading else { return }
         
@@ -25,7 +25,7 @@ extension ViewController: UIGestureRecognizerDelegate {
         performSegue(withIdentifier: SegueIdentifier.showObjects.rawValue, sender: addObjectButton)
     }
     
-    /// Determines if the tap gesture for presenting the `VirtualObjectSelectionViewController` should be used.
+    /// Determines if the tap gesture for presenting the `ModelObjectSelectionViewController` should be used.
     func gestureRecognizerShouldBegin(_: UIGestureRecognizer) -> Bool {
         return virtualObjectLoader.loadedObjects.isEmpty
     }
@@ -74,14 +74,14 @@ extension ViewController: UIPopoverPresentationControllerDelegate {
               let segueIdentifer = SegueIdentifier(rawValue: identifier),
               segueIdentifer == .showObjects else { return }
         
-        let objectsViewController = segue.destination as! VirtualObjectSelectionViewController
-        objectsViewController.virtualObjects = VirtualObject.availableObjects
+        let objectsViewController = segue.destination as! ModelObjectSelectionViewController
+        objectsViewController.modelObjects = ModelObject.availableObjects
         objectsViewController.delegate = self
         
         // Set all rows of currently placed objects to selected.
         for object in virtualObjectLoader.loadedObjects {
-            guard let index = VirtualObject.availableObjects.index(of: object) else { continue }
-            objectsViewController.selectedVirtualObjectRows.insert(index)
+            guard let index = ModelObject.availableObjects.index(of: object) else { continue }
+            objectsViewController.selectedModelObjectRows.insert(index)
         }
     }
     

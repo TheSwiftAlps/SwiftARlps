@@ -69,7 +69,11 @@ class VirtualObjectARView: ARSCNView {
         let hitTestResults = hitTest(point, options: hitTestOptions)
         
         return hitTestResults.lazy.flatMap { result in
-            return VirtualObject.existingObjectContainingNode(result.node)
+            if let node = ModelObject.existingObjectContainingNode(result.node) {
+                return node
+            } else {
+                return result.node as? VirtualObject
+            }
         }.first
     }
 
