@@ -32,8 +32,8 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
         DispatchQueue.main.async {
             self.statusViewController.cancelScheduledMessage(for: .planeEstimation)
             self.statusViewController.showMessage("SURFACE DETECTED")
-                self.statusViewController.scheduleMessage("TAP + TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .contentPlacement)
             if self.virtualObjectList.objects.isEmpty {
+                self.statusViewController.scheduleMessage("TAP A BUTTON TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .contentPlacement)
             }
         }
         updateQueue.async {

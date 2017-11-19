@@ -29,6 +29,15 @@ extension ViewController: UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_: UIGestureRecognizer) -> Bool {
         return virtualObjectList.objects.isEmpty
     }
+
+    @IBAction func addCube() {
+        guard !addCubeButton.isHidden else { return }
+        let cube = Cube()
+        virtualObjectList.add(object: cube)
+        DispatchQueue.main.async {
+            self.placeVirtualObject(cube)
+        }
+    }
     
     func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
         return true
@@ -41,9 +50,9 @@ extension ViewController: UIGestureRecognizerDelegate {
 
         statusViewController.cancelAllScheduledMessages()
 
-        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
         virtualObjectList.removeAllObjects()
+        addObjectButton.setImage(#imageLiteral(resourceName: "candle"), for: [])
+        addObjectButton.setImage(#imageLiteral(resourceName: "candle"), for: [.highlighted])
 
         resetTracking()
 

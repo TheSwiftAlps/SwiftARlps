@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var sceneView: VirtualObjectARView!
     
     @IBOutlet weak var addObjectButton: UIButton!
+
+    @IBOutlet weak var addCubeButton: UIButton!
     
     @IBOutlet weak var blurView: UIVisualEffectView!
     
@@ -152,6 +154,7 @@ class ViewController: UIViewController {
                 self.sceneView.pointOfView?.addChildNode(self.focusSquare)
             }
             addObjectButton.isHidden = true
+            addCubeButton.isHidden = true
             return
         }
         
@@ -166,6 +169,7 @@ class ViewController: UIViewController {
             }
         }
         addObjectButton.isHidden = false
+        addCubeButton.isHidden = false
         statusViewController.cancelScheduledMessage(for: .focusSquare)
 	}
     

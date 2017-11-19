@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -103,22 +106,22 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARKitInteraction" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RLh-bf-1c3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-py-dvH" customClass="VirtualObjectARView" customModule="ARKitInteraction" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </sceneKitView>
                             <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5W-V8-6lY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AjQ-5W-To9">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnx-rc-95S">
-                                <rect key="frame" x="0.0" y="20" width="600" height="85"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="z9S-1J-UzK"/>
                                 </constraints>
@@ -126,22 +129,39 @@
                                     <segue destination="ri3-7p-e6d" kind="embed" id="uiU-1f-e8S"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-ic-uGo" userLabel="Add Object Button">
-                                <rect key="frame" x="163.5" y="537" width="273" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-ic-uGo" userLabel="Add Model Button">
+                                <rect key="frame" x="15" y="604" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="NZv-Ts-4dl"/>
                                     <constraint firstAttribute="height" constant="48" id="Z1M-DD-gjO"/>
                                 </constraints>
-                                <state key="normal" image="add">
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="candle" backgroundImage="shutter">
                                     <color key="titleColor" red="0.85882352941176465" green="0.72941176470588232" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="shutterPressed"/>
                                 <connections>
-                                    <action selector="showVirtualObjectSelectionViewController" destination="BV1-FR-VrT" eventType="touchUpInside" id="zNz-qB-P16"/>
+                                    <action selector="showModelObjectSelectionViewController" destination="BV1-FR-VrT" eventType="touchUpInside" id="dNG-aR-YEV"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3cb-dQ-oXx">
-                                <rect key="frame" x="166" y="540" width="268" height="43"/>
+                                <rect key="frame" x="17.5" y="607" width="43" height="43"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-ye-fWC" userLabel="Add Cube Button">
+                                <rect key="frame" x="78" y="604" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="H6R-Pv-hsm"/>
+                                    <constraint firstAttribute="width" constant="48" id="JDj-zN-Hfq"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="box" backgroundImage="shutter">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.72941176470000002" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="shutterPressed"/>
+                                <connections>
+                                    <action selector="addCube" destination="BV1-FR-VrT" eventType="touchUpInside" id="E30-AZ-NJc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -150,15 +170,16 @@
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerX" secondItem="xcf-ic-uGo" secondAttribute="centerX" id="KPf-Pf-2mp"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="top" secondItem="GBj-4O-Whc" secondAttribute="top" id="Sdx-fT-fqG"/>
                             <constraint firstItem="R5W-V8-6lY" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="Yj0-Fo-B5n"/>
-                            <constraint firstItem="xcf-ic-uGo" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="163.5" id="ajJ-d9-mOg"/>
+                            <constraint firstItem="xcf-ic-uGo" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="15" id="ajJ-d9-mOg"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="boO-ZZ-neH"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="E6c-py-dvH" secondAttribute="trailing" id="brT-qF-Rdk"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="cGf-LE-hzb"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerY" secondItem="xcf-ic-uGo" secondAttribute="centerY" id="dtP-zr-OKq"/>
                             <constraint firstItem="R5W-V8-6lY" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="fDn-zw-Oo2"/>
                             <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="kLb-BI-xJ4"/>
-                            <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="xcf-ic-uGo" secondAttribute="trailing" constant="163.5" id="kN8-Ve-Xqq"/>
+                            <constraint firstItem="ENs-ye-fWC" firstAttribute="leading" secondItem="xcf-ic-uGo" secondAttribute="trailing" constant="15" id="kZi-EC-c9Q"/>
                             <constraint firstAttribute="bottom" secondItem="R5W-V8-6lY" secondAttribute="bottom" id="poH-DX-LIv"/>
+                            <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="ENs-ye-fWC" secondAttribute="bottom" constant="15" id="qbJ-OU-9P3"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="height" secondItem="xcf-ic-uGo" secondAttribute="height" constant="-5" id="szW-aA-CXv"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="xcf-ic-uGo" secondAttribute="bottom" constant="15" id="w7D-gO-FfL"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="wEL-Op-yTe"/>
@@ -167,6 +188,7 @@
                         <viewLayoutGuide key="safeArea" id="GBj-4O-Whc"/>
                     </view>
                     <connections>
+                        <outlet property="addCubeButton" destination="ENs-ye-fWC" id="sxo-o3-AX5"/>
                         <outlet property="addObjectButton" destination="xcf-ic-uGo" id="uFa-W2-4Iu"/>
                         <outlet property="blurView" destination="R5W-V8-6lY" id="oF2-lD-Srf"/>
                         <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
@@ -180,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="98.50074962518741"/>
         </scene>
-        <!--Virtual Object Selection View Controller-->
+        <!--Model Object Selection View Controller-->
         <scene sceneID="8F1-Zd-946">
             <objects>
-                <tableViewController id="mYv-Qg-jWH" customClass="VirtualObjectSelectionViewController" customModule="ARKitInteraction" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mYv-Qg-jWH" customClass="ModelObjectSelectionViewController" customModule="ARKitInteraction" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" id="PTA-9M-D7w">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,8 +268,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="48" height="48"/>
+        <image name="box" width="24" height="24"/>
+        <image name="candle" width="30" height="30"/>
         <image name="restart" width="20" height="23"/>
         <image name="restartPressed" width="20" height="23"/>
+        <image name="shutter" width="48" height="48"/>
+        <image name="shutterPressed" width="48" height="48"/>
     </resources>
 </document>

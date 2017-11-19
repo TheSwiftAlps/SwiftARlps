@@ -64,8 +64,8 @@ extension ViewController: ModelObjectSelectionViewControllerDelegate {
         // Hide progress indicator.
         spinner.stopAnimating()
 
-        addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-        addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
+        addObjectButton.setImage(#imageLiteral(resourceName: "candle"), for: [])
+        addObjectButton.setImage(#imageLiteral(resourceName: "candle"), for: [.highlighted])
 
         addObjectButton.isEnabled = true
         isRestartAvailable = true
