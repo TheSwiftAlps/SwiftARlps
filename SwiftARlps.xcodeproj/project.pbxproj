@@ -105,6 +105,7 @@
 		1488324C1EFC3ED00043E0AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3735A861FC231AB001179FA /* Default-568h@2x.png */,
 				B33BC12F1FC08A3F00DD94E3 /* Assets.xcassets */,
 				B3735A881FC231C4001179FA /* Icons.xcassets */,
 				3929C49E1E89EE4400E00B60 /* Models.scnassets */,
