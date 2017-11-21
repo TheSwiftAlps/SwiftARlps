@@ -1,3 +1,5 @@
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=5a13e4c292ae680001a82664&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/5a13e4c292ae680001a82664/build/latest?branch=master)
+
 ## 🏃‍♀️ Getting started
 
 * Open `SwiftARlps.xcodeproj`.
