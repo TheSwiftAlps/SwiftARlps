@@ -10,7 +10,7 @@ Point your camera at a surface, wait until it detects a surface and then press o
 
 * 👩‍👦 Pair up with another attendee.
 * 🍴 Fork the repository, and optionally create a branch.
-* 💡 Think of a feature to add, you can come up with something yourself or choose from the [issues list](https://github.com/TheSwiftAlps/SwiftARlps/issues).
+* 💡 Think of a feature to add, you can come up with something yourself or choose from the [Issues](https://github.com/TheSwiftAlps/SwiftARlps/issues).
 * 🎯 Commit and push your work, and create a [Pull Request](https://github.com/TheSwiftAlps/SwiftARlps/pulls).
 
 ## 🦉 Tips
