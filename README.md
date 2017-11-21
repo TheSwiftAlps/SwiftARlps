@@ -31,4 +31,4 @@ Point your camera at a surface, wait until it detects a surface and then press o
 ## 💡 Inspiration
 
 * [Made With ARKit](http://www.madewitharkit.com)
-* [ARPaint](https://www.toptal.com/swift/ios-arkit-tutorial-drawing-in-air-with-fingers) [Video](https://www.youtube.com/watch?v=gb9E0n8m5pE) [GitHub](https://github.com/oabdelkarim/ARPaint)
+* [ARPaint](https://www.toptal.com/swift/ios-arkit-tutorial-drawing-in-air-with-fingers) ([Video](https://www.youtube.com/watch?v=gb9E0n8m5pE), [GitHub](https://github.com/oabdelkarim/ARPaint))
