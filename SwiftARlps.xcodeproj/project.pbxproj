@@ -17,6 +17,12 @@
 		3929C49F1E89EE4400E00B60 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3929C49E1E89EE4400E00B60 /* Models.scnassets */; };
 		39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0B9581E9C6B1F003FCA0C /* Utilities.swift */; };
 		39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */; };
+		468DBA8510DE810D2090493C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7126D6C13A86E6AB4D6DD1C8 /* CoreVideo.framework */; };
+		533E262004285E9DFE348E65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A8C480C83068843D5A822 /* AVFoundation.framework */; };
+		5510AFA1CF4BA7A3E806EA4F /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80C42879941D13A174F590C /* BuddyBuildSDK.framework */; };
+		5824F07E25B436C1C1F7E796 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459610BC40E8EA32D3FC3C73 /* SystemConfiguration.framework */; };
+		58646D372C962DD2148F809B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64211490AD79483CB7F3B6B /* QuartzCore.framework */; };
+		76717D9514E388E6E0FA5845 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66759253A43DA05D9DABA5 /* CoreMedia.framework */; };
 		B33BC1301FC08A3F00DD94E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33BC12F1FC08A3F00DD94E3 /* Assets.xcassets */; };
 		B3735A871FC231AB001179FA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3735A861FC231AB001179FA /* Default-568h@2x.png */; };
 		B3735A891FC231C4001179FA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3735A881FC231C4001179FA /* Icons.xcassets */; };
@@ -31,6 +37,9 @@
 		C8C12A711F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C12A701F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift */; };
 		C8C2AC521F3A545C00E86BA3 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2AC511F3A545C00E86BA3 /* VirtualObjectInteraction.swift */; };
 		C8D71A001F3B7D3D0086AD64 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D719FF1F3B7D3D0086AD64 /* ModelObject.swift */; };
+		CE43AEF2E18524F924BE58A5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524A246D8DFAA4CD472DE35 /* CoreTelephony.framework */; };
+		D7D405F240B24C036B07D812 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E95722BBA12C622919F581 /* CoreText.framework */; };
+		DD8574D0EC668488A46A15EA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74C538658DA39BD2183AAC /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +48,9 @@
 		147D76491EFC36070000FEBF /* ViewController+ObjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ObjectSelection.swift"; sourceTree = "<group>"; };
 		1488323E1EFC378A0043E0AB /* ViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
 		148832401EFC3B250043E0AB /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
+		1A1B0E3F54ED1A3D4755B4F0 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		25E95722BBA12C622919F581 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		271A8C480C83068843D5A822 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3929C4881E89EC2C00E00B60 /* SwiftARlps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftARlps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3929C48D1E89EC2C00E00B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +59,10 @@
 		3929C49E1E89EE4400E00B60 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		39C0B9581E9C6B1F003FCA0C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		459610BC40E8EA32D3FC3C73 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7126D6C13A86E6AB4D6DD1C8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7B74C538658DA39BD2183AAC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8524A246D8DFAA4CD472DE35 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B33BC12F1FC08A3F00DD94E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3735A861FC231AB001179FA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B3735A881FC231C4001179FA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -55,6 +71,7 @@
 		B3C1D8C11FC07D130002729A /* Positionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Positionable.swift; sourceTree = "<group>"; };
 		B3FA19291FC08F8C0099FAA9 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		B3FA192B1FC0953B0099FAA9 /* VirtualObjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectList.swift; sourceTree = "<group>"; };
+		B64211490AD79483CB7F3B6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C41366B81EB80DD400EC054A /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C42A71BC1E9C0AF200944367 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		C46356661EF9CC480080C8D9 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
@@ -63,7 +80,9 @@
 		C8C2AC511F3A545C00E86BA3 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
 		C8D719FF1F3B7D3D0086AD64 /* ModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
 		E5D46016DF144A3D9292F48C /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		E80C42879941D13A174F590C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		EDEAD543F9C5D3E64B9CC319 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		FA66759253A43DA05D9DABA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +90,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5510AFA1CF4BA7A3E806EA4F /* BuddyBuildSDK.framework in Frameworks */,
+				DD8574D0EC668488A46A15EA /* AssetsLibrary.framework in Frameworks */,
+				D7D405F240B24C036B07D812 /* CoreText.framework in Frameworks */,
+				CE43AEF2E18524F924BE58A5 /* CoreTelephony.framework in Frameworks */,
+				5824F07E25B436C1C1F7E796 /* SystemConfiguration.framework in Frameworks */,
+				58646D372C962DD2148F809B /* QuartzCore.framework in Frameworks */,
+				533E262004285E9DFE348E65 /* AVFoundation.framework in Frameworks */,
+				76717D9514E388E6E0FA5845 /* CoreMedia.framework in Frameworks */,
+				468DBA8510DE810D2090493C /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +154,8 @@
 				3929C4891E89EC2C00E00B60 /* Products */,
 				709A21C4DC1039A54BBAAD49 /* Configuration */,
 				7F05FCEC064DFEF9F00989C9 /* LICENSE */,
+				FC5436419ECFEC30A5CA7D53 /* Frameworks */,
+				1A1B0E3F54ED1A3D4755B4F0 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +213,22 @@
 				B3FA192B1FC0953B0099FAA9 /* VirtualObjectList.swift */,
 			);
 			path = "Virtual Objects";
+			sourceTree = "<group>";
+		};
+		FC5436419ECFEC30A5CA7D53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E80C42879941D13A174F590C /* BuddyBuildSDK.framework */,
+				7B74C538658DA39BD2183AAC /* AssetsLibrary.framework */,
+				25E95722BBA12C622919F581 /* CoreText.framework */,
+				8524A246D8DFAA4CD472DE35 /* CoreTelephony.framework */,
+				459610BC40E8EA32D3FC3C73 /* SystemConfiguration.framework */,
+				B64211490AD79483CB7F3B6B /* QuartzCore.framework */,
+				271A8C480C83068843D5A822 /* AVFoundation.framework */,
+				FA66759253A43DA05D9DABA5 /* CoreMedia.framework */,
+				7126D6C13A86E6AB4D6DD1C8 /* CoreVideo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,11 +461,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftARlps/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalps.SwiftARlps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -434,11 +485,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftARlps/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalps.SwiftARlps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
