@@ -63,7 +63,12 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         case .changed:
             guard let object = selectedObject else { return }
             let scaleValue: Float = Float(gesture.scale)
-            object.scale = SCNVector3(scaleValue, scaleValue, scaleValue)
+            if object.physicsBody == nil {
+                object.scale = SCNVector3(scaleValue, scaleValue, scaleValue)
+            } else {
+                object.changeScaleIfPhysicsBodyIncluded(forSize: CGFloat(scaleValue))
+            }
+            print("state changed")
         default:
             break
         }
