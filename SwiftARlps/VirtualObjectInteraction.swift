@@ -32,7 +32,8 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     }
     
     /// The tracked screen position used to update the `trackedObject`'s position in `updateObjectToCurrentTrackingPosition()`.
-    private var currentTrackingPosition: CGPoint?
+    private var currentTrackingPositionVector: SCNVector3?
+    private var currentTrackingPositionPoint: CGPoint?
 
     init(sceneView: VirtualObjectARView) {
         self.sceneView = sceneView
@@ -45,14 +46,28 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         rotationGesture.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
         
         // Add gestures to the `sceneView`.
         sceneView.addGestureRecognizer(panGesture)
         sceneView.addGestureRecognizer(rotationGesture)
         sceneView.addGestureRecognizer(tapGesture)
+        sceneView.addGestureRecognizer(pinchGesture)
     }
     
     // MARK: - Gesture Actions
+    
+    @objc
+    func didPinch(_ gesture: UIPinchGestureRecognizer) {
+        switch gesture.state {
+        case .changed:
+            guard let object = selectedObject else { return }
+            let scaleValue: Float = Float(gesture.scale)
+            object.scale = SCNVector3(scaleValue, scaleValue, scaleValue)
+        default:
+            break
+        }
+    }
     
     @objc
     func didPan(_ gesture: ThresholdPanGesture) {
@@ -61,16 +76,19 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
             // Check for interaction with a new object.
             if let object = objectInteracting(with: gesture, in: sceneView) {
                 trackedObject = object
+                trackedObject?.physicsBody?.isAffectedByGravity = false
             }
             
         case .changed where gesture.isThresholdExceeded:
             guard let object = trackedObject else { return }
             let translation = gesture.translation(in: sceneView)
-            
-            let currentPosition = currentTrackingPosition ?? CGPoint(sceneView.projectPoint(object.position))
-            
-            // The `currentTrackingPosition` is used to update the `selectedObject` in `updateObjectToCurrentTrackingPosition()`.
-            currentTrackingPosition = CGPoint(x: currentPosition.x + translation.x, y: currentPosition.y + translation.y)
+
+            let currentPosition = currentTrackingPositionPoint ?? CGPoint(sceneView.projectPoint(object.position))
+
+            // The `currentTrackingPositionPoint` is used to update the `selectedObject` in `updateObjectToCurrentTrackingPosition()`.
+            currentTrackingPositionPoint = CGPoint(x: currentPosition.x + translation.x, y: currentPosition.y + translation.y)
+
+            currentTrackingPositionVector = SCNVector3.init(Float(object.position.x) + Float(translation.x / 1000), Float(object.position.y) - Float(translation.y / 1000), object.position.z)
 
             gesture.setTranslation(.zero, in: sceneView)
             
@@ -80,14 +98,16 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
             
         default:
             // Clear the current position tracking.
-            currentTrackingPosition = nil
+            currentTrackingPositionVector = nil
+            currentTrackingPositionPoint = nil
+            trackedObject?.physicsBody?.isAffectedByGravity = true
             trackedObject = nil
         }
     }
 
     /**
      If a drag gesture is in progress, update the tracked object's position by
-     converting the 2D touch location on screen (`currentTrackingPosition`) to
+     converting the 2D touch location on screen (`currentTrackingPositionVector`) to
      3D world space.
      This method is called per frame (via `SCNSceneRendererDelegate` callbacks),
      allowing drag gestures to move virtual objects regardless of whether one
@@ -96,8 +116,12 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
      */
     @objc
     func updateObjectToCurrentTrackingPosition() {
-        guard let object = trackedObject, let position = currentTrackingPosition else { return }
-        translate(object, basedOn: position, infinitePlane: translateAssumingInfinitePlane)
+        guard let object = trackedObject, let positionVector = currentTrackingPositionVector, let positionPoint = currentTrackingPositionPoint else { return }
+        if object.physicsBody == nil {
+            translate(object, basedOn: positionPoint, infinitePlane: translateAssumingInfinitePlane)
+        } else {
+            object.position = positionVector
+        }
     }
 
     /// - Tag: didRotate
