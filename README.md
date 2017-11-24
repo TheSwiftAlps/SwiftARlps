@@ -24,6 +24,7 @@ one of the buttons to place an object.
   files have which responsibility.
 * Choose a simple feature to add, you can add more complexity later.
 * Don't worry about the UI too much, just try make something work.
+* The units of ARKit is in meters, so be sure you don't place something 200 away
 * There are a bunch of icons to choose from in `Icons.xcassets`.
 * If you want to show a message to the user, you can use the
   `StatusViewController` with a `showMessage(_: String, autoHide: Bool)` method.
