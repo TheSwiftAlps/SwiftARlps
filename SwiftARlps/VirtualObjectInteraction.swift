@@ -45,14 +45,28 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         rotationGesture.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
         
         // Add gestures to the `sceneView`.
         sceneView.addGestureRecognizer(panGesture)
         sceneView.addGestureRecognizer(rotationGesture)
         sceneView.addGestureRecognizer(tapGesture)
+        sceneView.addGestureRecognizer(pinchGesture)
     }
     
     // MARK: - Gesture Actions
+    
+    @objc
+    func didPinch(_ gesture: UIPinchGestureRecognizer) {
+        switch gesture.state {
+        case .changed:
+            guard let object = trackedObject else { return }
+            let scaleValue: Float = Float(gesture.scale)
+            object.scale = SCNVector3(scaleValue, scaleValue, scaleValue)
+        default:
+            break
+        }
+    }
     
     @objc
     func didPan(_ gesture: ThresholdPanGesture) {
