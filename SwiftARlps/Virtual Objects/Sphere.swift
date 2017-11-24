@@ -15,7 +15,9 @@ class Sphere: SCNNode, Positionable {
     let radius: Float = 0.1
     override init() {
         self.sphere = SCNSphere(radius: CGFloat(radius))
-        sphere.materials = [getMaterial(for: UIColor.red)]
+        let material = getMaterial(for: UIImage(named: "BallMaterial")!)
+        material.shininess = 1.0
+        sphere.materials = [material]
         super.init()
         self.geometry = sphere
         let shape = SCNPhysicsShape(geometry: sphere, options: nil)

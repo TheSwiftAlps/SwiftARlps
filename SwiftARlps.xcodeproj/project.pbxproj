@@ -30,6 +30,7 @@
 		B399C9A51FC83CF400102E39 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C9A41FC83CF400102E39 /* Sphere.swift */; };
 		B3C1D8C01FC079560002729A /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1D8BF1FC079560002729A /* Cube.swift */; };
 		B3C1D8C21FC07D130002729A /* Positionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1D8C11FC07D130002729A /* Positionable.swift */; };
+		B3F65D9B1FC84551005F5F43 /* BallMaterial.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F65D9A1FC84551005F5F43 /* BallMaterial.png */; };
 		B3FA192A1FC08F8C0099FAA9 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA19291FC08F8C0099FAA9 /* VirtualObject.swift */; };
 		B3FA192C1FC0953B0099FAA9 /* VirtualObjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA192B1FC0953B0099FAA9 /* VirtualObjectList.swift */; };
 		C41366B91EB80DD400EC054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41366B81EB80DD400EC054A /* StatusViewController.swift */; };
@@ -74,6 +75,7 @@
 		B399C9A41FC83CF400102E39 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
 		B3C1D8BF1FC079560002729A /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		B3C1D8C11FC07D130002729A /* Positionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Positionable.swift; sourceTree = "<group>"; };
+		B3F65D9A1FC84551005F5F43 /* BallMaterial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallMaterial.png; sourceTree = "<group>"; };
 		B3FA19291FC08F8C0099FAA9 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		B3FA192B1FC0953B0099FAA9 /* VirtualObjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectList.swift; sourceTree = "<group>"; };
 		B64211490AD79483CB7F3B6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -139,6 +141,7 @@
 		1488324C1EFC3ED00043E0AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3F65D9A1FC84551005F5F43 /* BallMaterial.png */,
 				B3735A861FC231AB001179FA /* Default-568h@2x.png */,
 				B33BC12F1FC08A3F00DD94E3 /* Assets.xcassets */,
 				B3735A881FC231C4001179FA /* Icons.xcassets */,
@@ -306,6 +309,7 @@
 				B3735A871FC231AB001179FA /* Default-568h@2x.png in Resources */,
 				B3735A891FC231C4001179FA /* Icons.xcassets in Resources */,
 				3929C4911E89EC2C00E00B60 /* Main.storyboard in Resources */,
+				B3F65D9B1FC84551005F5F43 /* BallMaterial.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
