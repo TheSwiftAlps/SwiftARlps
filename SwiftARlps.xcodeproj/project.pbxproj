@@ -43,7 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11063F3B1EBE651B0033EE6D /* Interaction.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Interaction.md; sourceTree = "<group>"; };
+		11063F3B1EBE651B0033EE6D /* Apple's Interaction guidelines.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Apple's Interaction guidelines.md"; sourceTree = "<group>"; };
 		147062631F06FA790003EE03 /* VirtualObjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelection.swift; sourceTree = "<group>"; };
 		147D76491EFC36070000FEBF /* ViewController+ObjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ObjectSelection.swift"; sourceTree = "<group>"; };
 		1488323E1EFC378A0043E0AB /* ViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
@@ -67,6 +67,7 @@
 		B3735A861FC231AB001179FA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B3735A881FC231C4001179FA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B3735A8A1FC2BB6F001179FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B399C9A11FC808A800102E39 /* FileDescriptions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FileDescriptions.md; sourceTree = "<group>"; };
 		B3C1D8BF1FC079560002729A /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		B3C1D8C11FC07D130002729A /* Positionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Positionable.swift; sourceTree = "<group>"; };
 		B3FA19291FC08F8C0099FAA9 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
@@ -80,7 +81,7 @@
 		C8C2AC511F3A545C00E86BA3 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
 		C8D719FF1F3B7D3D0086AD64 /* ModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
 		E5D46016DF144A3D9292F48C /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		E80C42879941D13A174F590C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		E80C42879941D13A174F590C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		EDEAD543F9C5D3E64B9CC319 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		FA66759253A43DA05D9DABA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -149,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				B3735A8A1FC2BB6F001179FA /* README.md */,
-				11063F3B1EBE651B0033EE6D /* Interaction.md */,
+				B399C9A11FC808A800102E39 /* FileDescriptions.md */,
 				3929C48A1E89EC2C00E00B60 /* SwiftARlps */,
+				11063F3B1EBE651B0033EE6D /* Apple's Interaction guidelines.md */,
 				3929C4891E89EC2C00E00B60 /* Products */,
 				709A21C4DC1039A54BBAAD49 /* Configuration */,
 				7F05FCEC064DFEF9F00989C9 /* LICENSE */,
@@ -172,12 +174,12 @@
 			children = (
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
 				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
-				C8C12A701F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift */,
+				C46356661EF9CC480080C8D9 /* VirtualObjectARView.swift */,
 				1488323E1EFC378A0043E0AB /* ViewController+Actions.swift */,
+				C8C12A701F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift */,
 				147D76491EFC36070000FEBF /* ViewController+ObjectSelection.swift */,
 				C8C2AC511F3A545C00E86BA3 /* VirtualObjectInteraction.swift */,
 				C812D8671F47628300344E73 /* ThresholdPanGesture.swift */,
-				C46356661EF9CC480080C8D9 /* VirtualObjectARView.swift */,
 				C40DF57B1EC2330700D9D59E /* Virtual Objects */,
 				113B64D01ECA81CA0071CBD1 /* Focus Square */,
 				1488324B1EFC3EBF0043E0AB /* Additional View Controllers */,
@@ -206,11 +208,11 @@
 		C40DF57B1EC2330700D9D59E /* Virtual Objects */ = {
 			isa = PBXGroup;
 			children = (
+				B3FA192B1FC0953B0099FAA9 /* VirtualObjectList.swift */,
 				B3FA19291FC08F8C0099FAA9 /* VirtualObject.swift */,
 				B3C1D8C11FC07D130002729A /* Positionable.swift */,
 				C8D719FF1F3B7D3D0086AD64 /* ModelObject.swift */,
 				B3C1D8BF1FC079560002729A /* Cube.swift */,
-				B3FA192B1FC0953B0099FAA9 /* VirtualObjectList.swift */,
 			);
 			path = "Virtual Objects";
 			sourceTree = "<group>";
