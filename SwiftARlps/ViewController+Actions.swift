@@ -57,6 +57,11 @@ extension ViewController: UIGestureRecognizerDelegate {
         }
     }
 
+    @IBAction func didTapRedButton() {
+        guard !changeColorToRedButton.isHidden else { return }
+        virtualObjectInteraction.selectedObject?.changeColor(color: UIColor.red)
+    }
+
     func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
         return true
     }

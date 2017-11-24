@@ -147,7 +147,7 @@
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3cb-dQ-oXx">
                                 <rect key="frame" x="17.5" y="607" width="43" height="43"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ep-Bh-tFz" userLabel="Add Sphere Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ep-Bh-tFz" userLabel="Add BallCube Button">
                                 <rect key="frame" x="204" y="604" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="FTS-Cy-owx"/>
@@ -192,9 +192,25 @@
                                     <action selector="addSphere" destination="BV1-FR-VrT" eventType="touchUpInside" id="62B-Mi-GkD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5r-DL-2nZ" userLabel="Change color button">
+                                <rect key="frame" x="258" y="604" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="7HW-ix-rLT"/>
+                                    <constraint firstAttribute="height" constant="48" id="IG5-We-oNO"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="droplet" backgroundImage="shutter">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.72941176470000002" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="shutterPressed"/>
+                                <connections>
+                                    <action selector="didTapRedButton" destination="BV1-FR-VrT" eventType="touchUpInside" id="ftD-eR-LET"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="M5r-DL-2nZ" firstAttribute="leading" secondItem="0ep-Bh-tFz" secondAttribute="trailing" constant="6" id="7Y8-yh-KuH"/>
                             <constraint firstItem="0ep-Bh-tFz" firstAttribute="leading" secondItem="0Gt-iu-HFr" secondAttribute="trailing" constant="15" id="CbQ-3a-SbU"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="width" secondItem="xcf-ic-uGo" secondAttribute="width" constant="-5" id="Fg7-D6-Eh5"/>
                             <constraint firstAttribute="trailing" secondItem="R5W-V8-6lY" secondAttribute="trailing" id="J42-1v-Ihf"/>
@@ -208,6 +224,7 @@
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerY" secondItem="xcf-ic-uGo" secondAttribute="centerY" id="dtP-zr-OKq"/>
                             <constraint firstItem="R5W-V8-6lY" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="fDn-zw-Oo2"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="0Gt-iu-HFr" secondAttribute="bottom" constant="15" id="hmt-h7-n2S"/>
+                            <constraint firstItem="M5r-DL-2nZ" firstAttribute="centerY" secondItem="0ep-Bh-tFz" secondAttribute="centerY" id="hnU-oU-21B"/>
                             <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="kLb-BI-xJ4"/>
                             <constraint firstItem="ENs-ye-fWC" firstAttribute="leading" secondItem="xcf-ic-uGo" secondAttribute="trailing" constant="15" id="kZi-EC-c9Q"/>
                             <constraint firstItem="0ep-Bh-tFz" firstAttribute="centerY" secondItem="0Gt-iu-HFr" secondAttribute="centerY" id="obi-4p-Hhh"/>
@@ -227,6 +244,7 @@
                         <outlet property="addObjectButton" destination="xcf-ic-uGo" id="uFa-W2-4Iu"/>
                         <outlet property="addSphereButton" destination="0Gt-iu-HFr" id="mE4-uk-nB8"/>
                         <outlet property="blurView" destination="R5W-V8-6lY" id="oF2-lD-Srf"/>
+                        <outlet property="changeColorToRedButton" destination="M5r-DL-2nZ" id="hab-7Q-rbt"/>
                         <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
                         <outlet property="spinner" destination="3cb-dQ-oXx" id="rnE-Xe-cDE"/>
                         <segue destination="mYv-Qg-jWH" kind="popoverPresentation" identifier="showObjects" popoverAnchorView="xcf-ic-uGo" id="WP3-Hd-cnB">
@@ -308,6 +326,7 @@
         <image name="candle" width="30" height="30"/>
         <image name="circle" width="24" height="24"/>
         <image name="copy" width="24" height="24"/>
+        <image name="droplet" width="24" height="24"/>
         <image name="restart" width="20" height="23"/>
         <image name="restartPressed" width="20" height="23"/>
         <image name="shutter" width="48" height="48"/>

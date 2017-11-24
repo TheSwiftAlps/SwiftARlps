@@ -16,4 +16,9 @@ extension SCNNode {
         self.scale = SCNVector3(size, size, size)
         self.physicsBody = .dynamic()
     }
+
+    func changeColor(color: UIColor) {
+        let material = getMaterial(for: color)
+        self.geometry?.materials = [material]
+    }
 }
