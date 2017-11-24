@@ -45,6 +45,10 @@
 		CE43AEF2E18524F924BE58A5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8524A246D8DFAA4CD472DE35 /* CoreTelephony.framework */; };
 		D7D405F240B24C036B07D812 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E95722BBA12C622919F581 /* CoreText.framework */; };
 		DD8574D0EC668488A46A15EA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B74C538658DA39BD2183AAC /* AssetsLibrary.framework */; };
+		FEE7A9E11FC87B190019DA72 /* UIDeviceOrientation+CameraOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7A9E01FC87B190019DA72 /* UIDeviceOrientation+CameraOrientation.swift */; };
+		FEE7A9E31FC885B10019DA72 /* SCNVector3+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7A9E21FC885B10019DA72 /* SCNVector3+Distance.swift */; };
+		FEF69C8D1FC8870D00A62594 /* EmojiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF69C8C1FC8870D00A62594 /* EmojiFace.swift */; };
+		FEF69C8F1FC88AC900A62594 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF69C8E1FC88AC900A62594 /* String+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +98,10 @@
 		E80C42879941D13A174F590C /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		EDEAD543F9C5D3E64B9CC319 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		FA66759253A43DA05D9DABA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FEE7A9E01FC87B190019DA72 /* UIDeviceOrientation+CameraOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDeviceOrientation+CameraOrientation.swift"; sourceTree = "<group>"; };
+		FEE7A9E21FC885B10019DA72 /* SCNVector3+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Distance.swift"; sourceTree = "<group>"; };
+		FEF69C8C1FC8870D00A62594 /* EmojiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiFace.swift; sourceTree = "<group>"; };
+		FEF69C8E1FC88AC900A62594 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,9 @@
 		3929C48A1E89EC2C00E00B60 /* SwiftARlps */ = {
 			isa = PBXGroup;
 			children = (
+				FEF69C8E1FC88AC900A62594 /* String+Image.swift */,
+				FEE7A9E01FC87B190019DA72 /* UIDeviceOrientation+CameraOrientation.swift */,
+				FEE7A9E21FC885B10019DA72 /* SCNVector3+Distance.swift */,
 				1FB542991FC861A80026CB94 /* SCNNode+Extensions.swift */,
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
 				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
@@ -228,6 +239,7 @@
 				B3C1D8BF1FC079560002729A /* Cube.swift */,
 				B399C9A21FC834C700102E39 /* Plane.swift */,
 				B399C9A41FC83CF400102E39 /* Ball.swift */,
+				FEF69C8C1FC8870D00A62594 /* EmojiFace.swift */,
 			);
 			path = "Virtual Objects";
 			sourceTree = "<group>";
@@ -280,7 +292,7 @@
 				TargetAttributes = {
 					3929C4871E89EC2C00E00B60 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 729WVZ5N33;
+						DevelopmentTeam = 53B99NSR52;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -326,19 +338,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF69C8F1FC88AC900A62594 /* String+Image.swift in Sources */,
 				C812D8681F47628300344E73 /* ThresholdPanGesture.swift in Sources */,
 				11BD822A1F09D750003F11C8 /* ViewController+ObjectSelection.swift in Sources */,
 				1488323F1EFC378A0043E0AB /* ViewController+Actions.swift in Sources */,
 				3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */,
+				FEE7A9E31FC885B10019DA72 /* SCNVector3+Distance.swift in Sources */,
 				B3C1D8C01FC079560002729A /* Cube.swift in Sources */,
 				B3F65D9D1FC867D2005F5F43 /* BallCube.swift in Sources */,
 				B399C9A31FC834C700102E39 /* Plane.swift in Sources */,
 				C41366B91EB80DD400EC054A /* StatusViewController.swift in Sources */,
 				B3C1D8C21FC07D130002729A /* Positionable.swift in Sources */,
 				39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */,
+				FEF69C8D1FC8870D00A62594 /* EmojiFace.swift in Sources */,
 				147062641F06FA790003EE03 /* VirtualObjectSelection.swift in Sources */,
 				B399C9A51FC83CF400102E39 /* Ball.swift in Sources */,
 				C8C12A711F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift in Sources */,
+				FEE7A9E11FC87B190019DA72 /* UIDeviceOrientation+CameraOrientation.swift in Sources */,
 				1FB5429A1FC861A90026CB94 /* SCNNode+Extensions.swift in Sources */,
 				C8C2AC521F3A545C00E86BA3 /* VirtualObjectInteraction.swift in Sources */,
 				C46356671EF9CC500080C8D9 /* VirtualObjectARView.swift in Sources */,
@@ -483,14 +499,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 729WVZ5N33;
+				DEVELOPMENT_TEAM = 53B99NSR52;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftARlps/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalps.SwiftARlps;
+				PRODUCT_BUNDLE_IDENTIFIER = ink.jal.SwiftARlps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
@@ -507,14 +523,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 729WVZ5N33;
+				DEVELOPMENT_TEAM = 53B99NSR52;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftARlps/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalps.SwiftARlps;
+				PRODUCT_BUNDLE_IDENTIFIER = ink.jal.SwiftARlps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";

@@ -31,7 +31,9 @@ class ViewController: UIViewController {
     var focusSquare = FocusSquare()
 
     var planes: [ARPlaneAnchor: Plane] = [:]
-
+    
+    var emojiFaces:[EmojiFace] = []
+    
     /// The view controller that displays the status and "restart experience" UI.
     lazy var statusViewController: StatusViewController = {
         return childViewControllers.lazy.flatMap({ $0 as? StatusViewController }).first!
