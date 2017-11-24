@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var addObjectButton: UIButton!
 
     @IBOutlet weak var addCubeButton: UIButton!
-    
+    @IBOutlet weak var addSphereButton: UIButton!
+
     @IBOutlet weak var blurView: UIVisualEffectView!
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -26,7 +27,9 @@ class ViewController: UIViewController {
     // MARK: - UI Elements
     
     var focusSquare = FocusSquare()
-    
+
+    var planes: [ARPlaneAnchor: Plane] = [:]
+
     /// The view controller that displays the status and "restart experience" UI.
     lazy var statusViewController: StatusViewController = {
         return childViewControllers.lazy.flatMap({ $0 as? StatusViewController }).first!
@@ -62,7 +65,7 @@ class ViewController: UIViewController {
         
         sceneView.delegate = self
         sceneView.session.delegate = self
-        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, SCNDebugOptions.showPhysicsShapes]
 
         // Set up scene content.
         setupCamera()
@@ -156,6 +159,7 @@ class ViewController: UIViewController {
             }
             addObjectButton.isHidden = true
             addCubeButton.isHidden = true
+            addSphereButton.isHidden = true
             return
         }
         
@@ -171,6 +175,7 @@ class ViewController: UIViewController {
         }
         addObjectButton.isHidden = false
         addCubeButton.isHidden = false
+        addSphereButton.isHidden = false
         statusViewController.cancelScheduledMessage(for: .focusSquare)
 	}
     

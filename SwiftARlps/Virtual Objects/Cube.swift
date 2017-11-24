@@ -11,16 +11,17 @@ import SceneKit
 class Cube: SCNNode, Positionable {
     var recentModelObjectDistances: [Float] = []
 
+    let box: SCNBox
     let size: CGFloat = 0.1
     override init() {
+        self.box = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
         super.init()
-        self.geometry = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
-        // This positions this node's content on top of it's coordinate, so it's placed on top of a plane, instead of halfway through
-        self.pivot = SCNMatrix4MakeTranslation(0, Float(-size/2), 0)
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.black
-        material.lightingModel = .physicallyBased
-        self.geometry?.materials = [material]
+        let material = getMaterial(for: UIColor.black)
+        box.materials = [material]
+        self.geometry = box
+        let shape = SCNPhysicsShape(geometry: box, options: nil)
+        self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
+
     }
 
     required init?(coder aDecoder: NSCoder) {

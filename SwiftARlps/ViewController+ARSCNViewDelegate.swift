@@ -36,18 +36,31 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
                 self.statusViewController.scheduleMessage("TAP A BUTTON TO PLACE AN OBJECT", inSeconds: 7.5, messageType: .contentPlacement)
             }
         }
+        let plane = Plane()
+        planes[planeAnchor] = plane
+        plane.update(for: planeAnchor)
+        node.addChildNode(plane)
+
         updateQueue.async {
             for object in self.virtualObjectList.objects {
-                object.adjustOntoPlaneAnchor(planeAnchor, using: node)
+                if object.physicsBody == nil {
+                    object.adjustOntoPlaneAnchor(planeAnchor, using: node)
+                }
             }
         }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+
+        if let plane = planes[planeAnchor] {
+            plane.update(for: planeAnchor)
+        }
         updateQueue.async {
             for object in self.virtualObjectList.objects {
-                object.adjustOntoPlaneAnchor(planeAnchor, using: node)
+                if object.physicsBody == nil {
+                    object.adjustOntoPlaneAnchor(planeAnchor, using: node)
+                }
             }
         }
     }
