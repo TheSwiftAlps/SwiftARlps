@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var addCubeButton: UIButton!
     @IBOutlet weak var addSphereButton: UIButton!
+    @IBOutlet weak var addBallCubeButton: UIButton!
 
     @IBOutlet weak var blurView: UIVisualEffectView!
     
@@ -160,6 +161,7 @@ class ViewController: UIViewController {
             addObjectButton.isHidden = true
             addCubeButton.isHidden = true
             addSphereButton.isHidden = true
+            addBallCubeButton.isHidden = true
             return
         }
         
@@ -176,6 +178,7 @@ class ViewController: UIViewController {
         addObjectButton.isHidden = false
         addCubeButton.isHidden = false
         addSphereButton.isHidden = false
+        addBallCubeButton.isHidden = false
         statusViewController.cancelScheduledMessage(for: .focusSquare)
 	}
     

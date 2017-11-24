@@ -147,6 +147,21 @@
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3cb-dQ-oXx">
                                 <rect key="frame" x="17.5" y="607" width="43" height="43"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ep-Bh-tFz" userLabel="Add Sphere Button">
+                                <rect key="frame" x="208" y="604" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="FTS-Cy-owx"/>
+                                    <constraint firstAttribute="height" constant="48" id="h0N-Wb-gTL"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="copy" backgroundImage="shutter">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.72941176470000002" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="shutterPressed"/>
+                                <connections>
+                                    <action selector="addBallCube" destination="BV1-FR-VrT" eventType="touchUpInside" id="239-fF-PoH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-ye-fWC" userLabel="Add Cube Button">
                                 <rect key="frame" x="78" y="604" width="48" height="48"/>
                                 <constraints>
@@ -180,6 +195,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0ep-Bh-tFz" firstAttribute="leading" secondItem="0Gt-iu-HFr" secondAttribute="trailing" constant="19" id="CbQ-3a-SbU"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="width" secondItem="xcf-ic-uGo" secondAttribute="width" constant="-5" id="Fg7-D6-Eh5"/>
                             <constraint firstAttribute="trailing" secondItem="R5W-V8-6lY" secondAttribute="trailing" id="J42-1v-Ihf"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerX" secondItem="xcf-ic-uGo" secondAttribute="centerX" id="KPf-Pf-2mp"/>
@@ -194,6 +210,7 @@
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="0Gt-iu-HFr" secondAttribute="bottom" constant="15" id="hmt-h7-n2S"/>
                             <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="kLb-BI-xJ4"/>
                             <constraint firstItem="ENs-ye-fWC" firstAttribute="leading" secondItem="xcf-ic-uGo" secondAttribute="trailing" constant="15" id="kZi-EC-c9Q"/>
+                            <constraint firstItem="0ep-Bh-tFz" firstAttribute="centerY" secondItem="0Gt-iu-HFr" secondAttribute="centerY" id="obi-4p-Hhh"/>
                             <constraint firstAttribute="bottom" secondItem="R5W-V8-6lY" secondAttribute="bottom" id="poH-DX-LIv"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="ENs-ye-fWC" secondAttribute="bottom" constant="15" id="qbJ-OU-9P3"/>
                             <constraint firstItem="0Gt-iu-HFr" firstAttribute="leading" secondItem="ENs-ye-fWC" secondAttribute="trailing" constant="15" id="rC2-Je-L6n"/>
@@ -205,6 +222,7 @@
                         <viewLayoutGuide key="safeArea" id="GBj-4O-Whc"/>
                     </view>
                     <connections>
+                        <outlet property="addBallCubeButton" destination="0ep-Bh-tFz" id="HMl-fj-9N8"/>
                         <outlet property="addCubeButton" destination="ENs-ye-fWC" id="sxo-o3-AX5"/>
                         <outlet property="addObjectButton" destination="xcf-ic-uGo" id="uFa-W2-4Iu"/>
                         <outlet property="addSphereButton" destination="0Gt-iu-HFr" id="mE4-uk-nB8"/>
@@ -289,6 +307,7 @@
         <image name="box" width="24" height="24"/>
         <image name="candle" width="30" height="30"/>
         <image name="circle" width="24" height="24"/>
+        <image name="copy" width="24" height="24"/>
         <image name="restart" width="20" height="23"/>
         <image name="restartPressed" width="20" height="23"/>
         <image name="shutter" width="48" height="48"/>
