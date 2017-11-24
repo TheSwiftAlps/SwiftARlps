@@ -201,5 +201,4 @@ class ViewController: UIViewController {
         alertController.addAction(restartAction)
         present(alertController, animated: true, completion: nil)
     }
-
 }
