@@ -20,6 +20,8 @@ one of the buttons to place an object.
 
 ## 🦉 Tips
 
+* Start by looking at the FileDescriptions.md file for a description of what
+  files have which responsibility.
 * Choose a simple feature to add, you can add more complexity later.
 * Don't worry about the UI too much, just try make something work.
 * There are a bunch of icons to choose from in `Icons.xcassets`.
