@@ -11,16 +11,21 @@ import SceneKit
 class Ball: SCNNode, Positionable {
     var recentModelObjectDistances: [Float] = []
     
-    let sphere: SCNSphere
-    let radius: Float = 0.1
+    let text: SCNText
     override init() {
-        self.sphere = SCNSphere(radius: CGFloat(radius))
-        let material = getMaterial(for: UIImage(named: "BallMaterial")!)
-        material.shininess = 1.0
-        sphere.materials = [material]
+        self.text = SCNText(string: "SwiftAlps", extrusionDepth: 1)
+        self.text.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        let colorMaterial = SCNMaterial()
+        colorMaterial.diffuse.contents = UIColor.blue
+        colorMaterial.shininess = 1.0
+        text.materials = [colorMaterial]
+        
         super.init()
-        self.geometry = sphere
-        let shape = SCNPhysicsShape(geometry: sphere, options: nil)
+        
+//        let angle = CGFloat.pi / 3.0
+//        self.rotation = SCNVector4Make(1, 0, 0, Float(angle))
+        self.geometry = text
+        let shape = SCNPhysicsShape(geometry: text, options: nil)
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
     }
 

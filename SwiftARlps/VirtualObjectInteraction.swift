@@ -60,15 +60,24 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     @objc
     func didPinch(_ gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
+//        case .began:
+//            guard let object = selectedObject else { return }
+//            let scaleValue: Float = Float(gesture.scale)
+//            if let cube = object as? Cube {
+//                cube.scale(factor: CGFloat(scaleValue))
+//            }
         case .changed:
             guard let object = selectedObject else { return }
             let scaleValue: Float = Float(gesture.scale)
-            if object.physicsBody == nil {
-                object.scale = SCNVector3(scaleValue, scaleValue, scaleValue)
-            } else {
-                object.changeScaleIfPhysicsBodyIncluded(forSize: CGFloat(scaleValue))
+            if let cube = object as? Cube {
+                cube.scale(factor: CGFloat(scaleValue))
             }
-            print("state changed")
+        case .ended:
+            guard let object = selectedObject else { return }
+            let scaleValue: Float = Float(gesture.scale)
+            if let cube = object as? Cube {
+                cube.saveScale(factor: CGFloat(scaleValue))
+            }
         default:
             break
         }
@@ -152,6 +161,8 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         if let tappedObject = sceneView.virtualObject(at: touchLocation) {
             // Select a new object.
             selectedObject = tappedObject
+            
+            print("tappedObject: \(tappedObject.name)")
         } else if let object = selectedObject {
             // Teleport the object to whereever the user touched the screen.
             translate(object, basedOn: touchLocation, infinitePlane: false)
