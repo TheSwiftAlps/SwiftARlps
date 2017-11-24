@@ -47,12 +47,23 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
-        
+
+        let swipeGestures = [UISwipeGestureRecognizerDirection.down, UISwipeGestureRecognizerDirection.up, UISwipeGestureRecognizerDirection.left, UISwipeGestureRecognizerDirection.right].map { addSwipeGesture(for: $0) }
+
         // Add gestures to the `sceneView`.
         sceneView.addGestureRecognizer(panGesture)
         sceneView.addGestureRecognizer(rotationGesture)
         sceneView.addGestureRecognizer(tapGesture)
         sceneView.addGestureRecognizer(pinchGesture)
+
+}
+    
+    func addSwipeGesture(for direction: UISwipeGestureRecognizerDirection) -> UIGestureRecognizer {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(throwObject(_:)))
+        swipeGesture.direction = direction
+        swipeGesture.numberOfTouchesRequired = 3
+        sceneView.addGestureRecognizer(swipeGesture)
+        return swipeGesture
     }
     
     // MARK: - Gesture Actions
@@ -161,6 +172,37 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         // Allow objects to be translated and rotated at the same time.
         return true
+    }
+    
+    @objc
+    func throwObject(_ gesture: UISwipeGestureRecognizer) {
+        if let _ = selectedObject {
+            var x = 0
+            var y = 0
+            var z = 0
+            switch gesture.direction {
+            case .down:
+                x = 0
+                z = 5
+            case .up:
+                x = 0
+                z = -5
+            case .right:
+                x = 5
+                z = 0
+            case .left:
+                x = -5
+                z = 0
+            default:
+                break
+            }
+            //throw the object using the direction and velocity of the swipe gesture
+            print("\(sceneView.session.currentFrame?.camera.transform)")
+            let force = simd_make_float4(Float(x), Float(y), Float(z), 0)
+            let rotatedForce = simd_mul(sceneView.session.currentFrame!.camera.transform, force)
+            let vectorForce = SCNVector3(x:rotatedForce.x, y:rotatedForce.y, z:rotatedForce.z)
+            selectedObject?.physicsBody?.applyForce(vectorForce, asImpulse: true)
+        }
     }
 
     /// A helper method to return the first object that is found under the provided `gesture`s touch locations.
