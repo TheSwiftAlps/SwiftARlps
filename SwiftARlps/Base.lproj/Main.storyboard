@@ -148,7 +148,7 @@
                                 <rect key="frame" x="17.5" y="607" width="43" height="43"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ep-Bh-tFz" userLabel="Add Sphere Button">
-                                <rect key="frame" x="208" y="604" width="48" height="48"/>
+                                <rect key="frame" x="204" y="604" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="FTS-Cy-owx"/>
                                     <constraint firstAttribute="height" constant="48" id="h0N-Wb-gTL"/>
@@ -195,7 +195,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0ep-Bh-tFz" firstAttribute="leading" secondItem="0Gt-iu-HFr" secondAttribute="trailing" constant="19" id="CbQ-3a-SbU"/>
+                            <constraint firstItem="0ep-Bh-tFz" firstAttribute="leading" secondItem="0Gt-iu-HFr" secondAttribute="trailing" constant="15" id="CbQ-3a-SbU"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="width" secondItem="xcf-ic-uGo" secondAttribute="width" constant="-5" id="Fg7-D6-Eh5"/>
                             <constraint firstAttribute="trailing" secondItem="R5W-V8-6lY" secondAttribute="trailing" id="J42-1v-Ihf"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerX" secondItem="xcf-ic-uGo" secondAttribute="centerX" id="KPf-Pf-2mp"/>
