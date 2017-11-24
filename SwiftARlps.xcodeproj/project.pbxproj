@@ -24,6 +24,7 @@
 		5824F07E25B436C1C1F7E796 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459610BC40E8EA32D3FC3C73 /* SystemConfiguration.framework */; };
 		58646D372C962DD2148F809B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64211490AD79483CB7F3B6B /* QuartzCore.framework */; };
 		76717D9514E388E6E0FA5845 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66759253A43DA05D9DABA5 /* CoreMedia.framework */; };
+		A00F418E1FC87E3800F8753C /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F418D1FC87E3800F8753C /* ColorPickerViewController.swift */; };
 		B33BC1301FC08A3F00DD94E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33BC12F1FC08A3F00DD94E3 /* Assets.xcassets */; };
 		B3735A871FC231AB001179FA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3735A861FC231AB001179FA /* Default-568h@2x.png */; };
 		B3735A891FC231C4001179FA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3735A881FC231C4001179FA /* Icons.xcassets */; };
@@ -69,6 +70,7 @@
 		7126D6C13A86E6AB4D6DD1C8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7B74C538658DA39BD2183AAC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8524A246D8DFAA4CD472DE35 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A00F418D1FC87E3800F8753C /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		B33BC12F1FC08A3F00DD94E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3735A861FC231AB001179FA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B3735A881FC231C4001179FA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		1488324B1EFC3EBF0043E0AB /* Additional View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A00F418D1FC87E3800F8753C /* ColorPickerViewController.swift */,
 				C41366B81EB80DD400EC054A /* StatusViewController.swift */,
 				147062631F06FA790003EE03 /* VirtualObjectSelection.swift */,
 			);
@@ -280,7 +283,7 @@
 				TargetAttributes = {
 					3929C4871E89EC2C00E00B60 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 729WVZ5N33;
+						DevelopmentTeam = YSJBA72NAB;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -340,6 +343,7 @@
 				B399C9A51FC83CF400102E39 /* Ball.swift in Sources */,
 				C8C12A711F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				1FB5429A1FC861A90026CB94 /* SCNNode+Extensions.swift in Sources */,
+				A00F418E1FC87E3800F8753C /* ColorPickerViewController.swift in Sources */,
 				C8C2AC521F3A545C00E86BA3 /* VirtualObjectInteraction.swift in Sources */,
 				C46356671EF9CC500080C8D9 /* VirtualObjectARView.swift in Sources */,
 				148832411EFC3B250043E0AB /* FocusSquareSegment.swift in Sources */,
@@ -483,14 +487,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 729WVZ5N33;
+				DEVELOPMENT_TEAM = YSJBA72NAB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftARlps/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalps.SwiftARlps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lascorbe.SwiftARlps2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
@@ -507,14 +511,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 729WVZ5N33;
+				DEVELOPMENT_TEAM = YSJBA72NAB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftARlps/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalps.SwiftARlps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lascorbe.SwiftARlps2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";

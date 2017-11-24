@@ -57,11 +57,6 @@ extension ViewController: UIGestureRecognizerDelegate {
         }
     }
 
-    @IBAction func didTapRedButton() {
-        guard !changeColorToRedButton.isHidden else { return }
-        virtualObjectInteraction.selectedObject?.changeColor(color: UIColor.red)
-    }
-
     func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -86,6 +81,12 @@ extension ViewController: UIGestureRecognizerDelegate {
     }
 }
 
+extension ViewController: ColorPickerViewControllerDelegate {
+    func colorPicked(color: UIColor) {
+        virtualObjectInteraction.selectedObject?.changeColor(color: color)
+    }
+}
+
 extension ViewController: UIPopoverPresentationControllerDelegate {
     
     // MARK: - UIPopoverPresentationControllerDelegate
@@ -100,6 +101,13 @@ extension ViewController: UIPopoverPresentationControllerDelegate {
             popoverController.delegate = self
             popoverController.sourceView = button
             popoverController.sourceRect = button.bounds
+        }
+        
+        if segue.identifier == "ColorPickerViewController" {
+            let controller = segue.destination as! ColorPickerViewController
+            controller.popoverPresentationController!.delegate = self
+            controller.preferredContentSize = CGSize(width: 320, height: 200)
+            controller.delegate = self
         }
         
         guard let identifier = segue.identifier,
