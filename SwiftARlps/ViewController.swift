@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var addCubeButton: UIButton!
     @IBOutlet weak var addSphereButton: UIButton!
+    @IBOutlet weak var changeColorToRedButton: UIButton!
 
     @IBOutlet weak var blurView: UIVisualEffectView!
     
@@ -56,6 +57,12 @@ class ViewController: UIViewController {
     /// Convenience accessor for the session owned by ARSCNView.
     var session: ARSession {
         return sceneView.session
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func didTapRedButton() {
+        virtualObjectInteraction.selectedObject?.changeColor(color: UIColor.red)
     }
     
     // MARK: - View Controller Life Cycle
@@ -160,6 +167,7 @@ class ViewController: UIViewController {
             addObjectButton.isHidden = true
             addCubeButton.isHidden = true
             addSphereButton.isHidden = true
+            changeColorToRedButton.isHidden = true
             return
         }
         
@@ -176,6 +184,7 @@ class ViewController: UIViewController {
         addObjectButton.isHidden = false
         addCubeButton.isHidden = false
         addSphereButton.isHidden = false
+        changeColorToRedButton.isHidden = false
         statusViewController.cancelScheduledMessage(for: .focusSquare)
 	}
     
