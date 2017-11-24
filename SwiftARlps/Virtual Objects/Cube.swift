@@ -14,13 +14,21 @@ class Cube: SCNNode, Positionable {
     let size: CGFloat = 0.1
     override init() {
         super.init()
-        self.geometry = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
+        geometry = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
+        guard let geometry = geometry else { return }
+        
+        let physicsShape = SCNPhysicsShape(geometry: geometry)
+        physicsBody = SCNPhysicsBody(type: .dynamic, shape: physicsShape)
+        physicsBody?.friction = 1
+        physicsBody?.restitution = 0
+
         // This positions this node's content on top of it's coordinate, so it's placed on top of a plane, instead of halfway through
-        self.pivot = SCNMatrix4MakeTranslation(0, Float(-size/2), 0)
         let material = SCNMaterial()
         material.diffuse.contents = UIColor.black
         material.lightingModel = .physicallyBased
         self.geometry?.materials = [material]
+        
+        position = SCNVector3(0, 2, 0)
     }
 
     required init?(coder aDecoder: NSCoder) {

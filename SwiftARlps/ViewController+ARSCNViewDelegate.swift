@@ -37,18 +37,18 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
             }
         }
         updateQueue.async {
-            for object in self.virtualObjectList.objects {
-                object.adjustOntoPlaneAnchor(planeAnchor, using: node)
-            }
+            
+            guard let pos = self.sceneView.worldPosition(fromScreenPosition: self.screenCenter, objectPosition: self.focusSquare.lastPosition) else { return }
+            self.floor.position = SCNVector3(0, pos.position.y, 0)
         }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         updateQueue.async {
-            for object in self.virtualObjectList.objects {
-                object.adjustOntoPlaneAnchor(planeAnchor, using: node)
-            }
+            
+            guard let pos = self.sceneView.worldPosition(fromScreenPosition: self.screenCenter, objectPosition: self.focusSquare.lastPosition) else { return }
+            self.floor.position = SCNVector3(0, pos.position.y, 0)
         }
     }
     

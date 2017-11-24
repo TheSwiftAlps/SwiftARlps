@@ -55,6 +55,12 @@ class ViewController: UIViewController {
         return sceneView.session
     }
     
+    lazy var floor: Floor = {
+        let floor = Floor()
+        
+        return floor
+    }()
+    
     // MARK: - View Controller Life Cycle
     
     override func viewDidLoad() {
@@ -62,7 +68,7 @@ class ViewController: UIViewController {
         
         sceneView.delegate = self
         sceneView.session.delegate = self
-        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, SCNDebugOptions.showPhysicsShapes]
 
         // Set up scene content.
         setupCamera()
@@ -88,6 +94,12 @@ class ViewController: UIViewController {
         // Set the delegate to ensure this gesture is only used when there are no virtual objects in the scene.
         tapGesture.delegate = self
         sceneView.addGestureRecognizer(tapGesture)
+        
+        
+        
+        
+        
+        sceneView.scene.rootNode.addChildNode(floor)
     }
 
 	override func viewDidAppear(_ animated: Bool) {
