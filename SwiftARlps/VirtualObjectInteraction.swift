@@ -32,7 +32,7 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     }
     
     /// The tracked screen position used to update the `trackedObject`'s position in `updateObjectToCurrentTrackingPosition()`.
-    private var currentTrackingPosition: CGPoint?
+    private var currentTrackingPosition: SCNVector3?
 
     init(sceneView: VirtualObjectARView) {
         self.sceneView = sceneView
@@ -66,11 +66,7 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
         case .changed where gesture.isThresholdExceeded:
             guard let object = trackedObject else { return }
             let translation = gesture.translation(in: sceneView)
-            
-            let currentPosition = currentTrackingPosition ?? CGPoint(sceneView.projectPoint(object.position))
-            
-            // The `currentTrackingPosition` is used to update the `selectedObject` in `updateObjectToCurrentTrackingPosition()`.
-            currentTrackingPosition = CGPoint(x: currentPosition.x + translation.x, y: currentPosition.y + translation.y)
+            currentTrackingPosition = SCNVector3.init(Float(object.position.x) + Float(translation.x / 1000), Float(object.position.y) - Float(translation.y / 1000), object.position.z)
 
             gesture.setTranslation(.zero, in: sceneView)
             
@@ -97,7 +93,9 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     @objc
     func updateObjectToCurrentTrackingPosition() {
         guard let object = trackedObject, let position = currentTrackingPosition else { return }
-        translate(object, basedOn: position, infinitePlane: translateAssumingInfinitePlane)
+        object.position = position
+        let point = CGPoint.init(x: CGFloat(position.x), y: CGFloat(position.y))
+//        translate(object, basedOn: point, infinitePlane: translateAssumingInfinitePlane)
     }
 
     /// - Tag: didRotate

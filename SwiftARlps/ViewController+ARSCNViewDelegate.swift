@@ -38,7 +38,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
         }
         updateQueue.async {
             for object in self.virtualObjectList.objects {
-                object.adjustOntoPlaneAnchor(planeAnchor, using: node)
+                //object.adjustOntoPlaneAnchor(planeAnchor, using: node)
             }
         }
     }
@@ -47,7 +47,7 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         updateQueue.async {
             for object in self.virtualObjectList.objects {
-                object.adjustOntoPlaneAnchor(planeAnchor, using: node)
+               // object.adjustOntoPlaneAnchor(planeAnchor, using: node)
             }
         }
     }
