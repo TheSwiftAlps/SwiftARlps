@@ -8,7 +8,7 @@
 
 import SceneKit
 
-class Sphere: SCNNode, Positionable {
+class Ball: SCNNode, Positionable {
     var recentModelObjectDistances: [Float] = []
     
     let sphere: SCNSphere

@@ -41,7 +41,7 @@ extension ViewController: UIGestureRecognizerDelegate {
 
     @IBAction func addSphere() {
         guard !addSphereButton.isHidden else { return }
-        let sphere = Sphere()
+        let sphere = Ball()
         virtualObjectList.add(object: sphere)
         DispatchQueue.main.async {
             self.placeVirtualObject(sphere)

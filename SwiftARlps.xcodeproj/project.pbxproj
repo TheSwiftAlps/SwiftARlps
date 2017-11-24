@@ -27,7 +27,7 @@
 		B3735A871FC231AB001179FA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3735A861FC231AB001179FA /* Default-568h@2x.png */; };
 		B3735A891FC231C4001179FA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3735A881FC231C4001179FA /* Icons.xcassets */; };
 		B399C9A31FC834C700102E39 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C9A21FC834C700102E39 /* Plane.swift */; };
-		B399C9A51FC83CF400102E39 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C9A41FC83CF400102E39 /* Sphere.swift */; };
+		B399C9A51FC83CF400102E39 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = B399C9A41FC83CF400102E39 /* Ball.swift */; };
 		B3C1D8C01FC079560002729A /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1D8BF1FC079560002729A /* Cube.swift */; };
 		B3C1D8C21FC07D130002729A /* Positionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1D8C11FC07D130002729A /* Positionable.swift */; };
 		B3F65D9B1FC84551005F5F43 /* BallMaterial.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F65D9A1FC84551005F5F43 /* BallMaterial.png */; };
@@ -72,7 +72,7 @@
 		B3735A8A1FC2BB6F001179FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B399C9A11FC808A800102E39 /* FileDescriptions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FileDescriptions.md; sourceTree = "<group>"; };
 		B399C9A21FC834C700102E39 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
-		B399C9A41FC83CF400102E39 /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		B399C9A41FC83CF400102E39 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		B3C1D8BF1FC079560002729A /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		B3C1D8C11FC07D130002729A /* Positionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Positionable.swift; sourceTree = "<group>"; };
 		B3F65D9A1FC84551005F5F43 /* BallMaterial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallMaterial.png; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 				C8D719FF1F3B7D3D0086AD64 /* ModelObject.swift */,
 				B3C1D8BF1FC079560002729A /* Cube.swift */,
 				B399C9A21FC834C700102E39 /* Plane.swift */,
-				B399C9A41FC83CF400102E39 /* Sphere.swift */,
+				B399C9A41FC83CF400102E39 /* Ball.swift */,
 			);
 			path = "Virtual Objects";
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				B3C1D8C21FC07D130002729A /* Positionable.swift in Sources */,
 				39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */,
 				147062641F06FA790003EE03 /* VirtualObjectSelection.swift in Sources */,
-				B399C9A51FC83CF400102E39 /* Sphere.swift in Sources */,
+				B399C9A51FC83CF400102E39 /* Ball.swift in Sources */,
 				C8C12A711F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				C8C2AC521F3A545C00E86BA3 /* VirtualObjectInteraction.swift in Sources */,
 				C46356671EF9CC500080C8D9 /* VirtualObjectARView.swift in Sources */,
