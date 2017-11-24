@@ -35,3 +35,10 @@ extension CGPoint {
 		return sqrt(x * x + y * y)
 	}
 }
+
+func getMaterial(for contents: Any) -> SCNMaterial {
+    let m = SCNMaterial()
+    m.diffuse.contents = contents
+    m.lightingModel = .physicallyBased
+    return m
+}

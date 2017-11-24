@@ -38,7 +38,16 @@ extension ViewController: UIGestureRecognizerDelegate {
             self.placeVirtualObject(cube)
         }
     }
-    
+
+    @IBAction func addSphere() {
+        guard !addSphereButton.isHidden else { return }
+        let sphere = Ball()
+        virtualObjectList.add(object: sphere)
+        DispatchQueue.main.async {
+            self.placeVirtualObject(sphere)
+        }
+    }
+
     func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
         return true
     }
